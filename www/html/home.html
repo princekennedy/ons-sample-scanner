@@ -1,0 +1,89 @@
+<ons-page>
+  <ons-splitter id="leftNav">
+    <ons-splitter-side swipeable width="250px" collapse swipe-target-width="50px">
+      <ons-page>
+
+        <ons-toolbar>Time Tracker</ons-toolbar>
+        <ons-list id="links">
+          <ons-list-item tappable style="cursor: pointer" modifier="longdivider chevron">
+            <div class="left">
+              <ons-icon icon="fa-refresh" style="color: grey;"></ons-icon>
+            </div>
+            <div class="center">
+              Sync Data
+            </div>
+          </ons-list-item>
+          <ons-list-item tappable style="cursor: pointer" modifier="longdivider chevron">
+            <div class="left">
+              <ons-icon icon="fa-cog" style="color: grey;"></ons-icon>
+            </div>
+            <div class="center">
+              Settings
+            </div>
+          </ons-list-item>
+        </ons-list>
+
+
+        <ons-list-title></ons-list-title>
+        <ons-list id="default-category-list">
+          <ons-list-item ui-sref-active="active" ng-click="go('Login')" tappable>
+            <div class="left">
+              <ons-icon icon="fa-sign-out" style="color: grey;"></ons-icon>
+            </div>
+            <label  class="center" for="r-all"> Logout </label>
+          </ons-list-item>
+
+      <!--     <ons-list-item tappable category-id="">
+            <div class="left">
+              <ons-radio name="categoryGroup" input-id="r-no"></ons-radio>
+            </div>
+            <label class="center" for="r-no">No category</label>
+          </ons-list-item> -->
+        </ons-list>
+      </ons-page>
+
+    </ons-splitter-side>
+    <ons-splitter-content>
+
+    <!-- Third navigation component: Tabbar. This will disappear if the first or second components change their content. -->
+      <ons-page id="tabbarPage">
+        <ons-toolbar>
+          <div class="left">
+            <!-- Toolbar-button with different icons depending on the platform. -->
+            <ons-toolbar-button ng-click="nav('leftNav')" component="button">
+              <ons-icon icon="ion-navicon, material:md-menu" size="32px, material:24px"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">Time Tracker {{name}}</div>
+          <div class="right">
+            <!-- Toolbar-button  only visible for iOS/other. -->
+            <ons-if platform="ios other">
+              <ons-toolbar-button   ng-click="go('AddSample')" component="button">
+                New
+              </ons-toolbar-button>
+            </ons-if>
+          </div>
+        </ons-toolbar>
+
+        <!-- Floating Action Button only visible for Android. -->
+        <ons-if platform="android">
+          <ons-fab position="right bottom"  ng-click="go('AddSample')" component="addSample" >
+            <ons-icon icon="md-plus"></ons-icon>
+            <!-- <ons-icon icon="md-edit"></ons-icon> -->
+          </ons-fab>
+        </ons-if>
+
+        <!-- Auto-positioned Tabbar: top on Android, bottom on iOS/other. -->
+  <!--       <ons-tabbar id="myTabbar" position="auto">
+          <ons-tab page="html/pending_tasks.html" label="Pending" active>
+          </ons-tab>
+          <ons-tab page="html/completed_tasks.html" label="Completed">
+          </ons-tab>
+        </ons-tabbar> -->
+      </ons-page>
+
+
+    </ons-splitter-content>
+  </ons-splitter>
+</ons-page>
+

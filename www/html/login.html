@@ -1,0 +1,34 @@
+<ons-page id="loginPage">
+  <ons-toolbar>
+    <div class="center">Login</div>
+    <div class="right">
+      <ons-if platform="android">
+        <ons-toolbar-button component="button/save-task">
+          <ons-icon icon="md-save"></ons-icon>
+        </ons-toolbar-button>
+      </ons-if>
+    </div>
+  </ons-toolbar>
+  <ons-list id="pending-list">
+  <!-- <ons-list-title>Other options</ons-list-title> -->
+	  <ons-list>
+	    <ons-list-item modifier="nodivider">
+	      <label class="center" for="inner-highlight-input">
+	        Login
+	      </label>
+	      <div class="right">
+	        <ons-switch id="highlight-input" input-id="inner-highlight-input"></ons-switch>
+	      </div>
+	    </ons-list-item>
+	    <ons-list-item modifier="nodivider">
+	      <label class="center" for="inner-urgent-input">
+	        Is it urgent?
+	      </label>
+	      <div class="right">
+	        <ons-switch id="urgent-input" input-id="inner-urgent-input"></ons-switch>
+	      </div>
+	      <ons-button ng-click="go('Home')">Home</ons-button>
+	    </ons-list-item>
+	  </ons-list>
+	  </ons-list>
+</ons-page>

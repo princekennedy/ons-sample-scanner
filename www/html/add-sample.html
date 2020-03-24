@@ -1,0 +1,78 @@
+<ons-page id="addSample">
+  <ons-toolbar>
+    <div class="left" ng-click="go('Home')"><ons-back-button>Todos</ons-back-button></div>
+    <div class="center">New Sample</div>
+    <div class="right">
+      <ons-if platform="android">
+        <ons-toolbar-button component="button/save-task">
+          <ons-icon icon="md-save"></ons-icon>
+        </ons-toolbar-button>
+      </ons-if>
+    </div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item modifier="nodivider">
+      <div class="center">
+        <ons-list-title>Select PID</ons-list-title>
+
+        <input list="pid" style="width: 100%; padding: 5px" placeholder="PID`s">   
+          <datalist id="pid">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+          </datalist>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="nodivider">
+      <div class="center">
+        <ons-list-title>Select Sample Type</ons-list-title>
+
+        <input list="sampleType" style="width: 100%; padding: 5px" placeholder="Sample types">   
+          <datalist id="sampleType">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+          </datalist>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="nodivider">
+      <div class="center">
+        <textarea class="textarea textarea--transparent" rows="3" 
+          placeholder="Textarea" 
+          style="width: 100%; border: 1px solid lightgrey">
+        </textarea>
+      </div>
+    </ons-list-item>
+  </ons-list>
+
+  <!-- <ons-list-title>Other options</ons-list-title> -->
+<!--   <ons-list>
+    <ons-list-item modifier="nodivider">
+      <label class="center" for="inner-highlight-input">
+        Highlight?
+      </label>
+      <div class="right">
+        <ons-switch id="highlight-input" input-id="inner-highlight-input"></ons-switch>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="nodivider">
+      <label class="center" for="inner-urgent-input">
+        Is it urgent?
+      </label>
+      <div class="right">
+        <ons-switch id="urgent-input" input-id="inner-urgent-input"></ons-switch>
+      </div>
+    </ons-list-item>
+  </ons-list> -->
+  <ons-if platform="android other">
+    <ons-button modifier="large" component="button/save-task">Add</ons-button>
+  </ons-if>
+  <ons-if platform="ios">
+    <ons-button modifier="large" component="button/save-task">Add</ons-button>
+  </ons-if>
+</ons-page>
